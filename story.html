@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2E4A6E">
+<title>Йога, авария, три ребёнка и немного безумия — Татьяна · Yoga Time Ashdod</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FDFBF4;--cream:#FEFCF5;--gold:#C2A468;--gold-soft:#E0CFA9;--gold-ink:#8A6B44;
+  --grass-deep:#75854E;--ink:#302E28;--ink-soft:#8B857A;--line:rgba(48,46,40,.13);
+  --wood-light:#D4B98C;--wood-dark:#7A6240;--wood-text:#76634A;
+  --grass-tint:rgba(138,154,102,.18);--gold-tint:rgba(194,164,104,.2);--wood-tint:rgba(168,135,92,.18);
+  --sh:0 8px 24px rgba(36,59,88,.07),0 32px 64px -12px rgba(36,59,88,.18);
+  --ez:cubic-bezier(.22,1,.36,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--ivory);
+  line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:focus{outline:none}
+a:focus-visible{outline:2px dashed var(--gold);outline-offset:3px}
+
+/* фон */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg i{position:absolute;border-radius:50%}
+.bg .f1{width:56vw;height:56vw;top:-16vw;right:-14vw;
+  background:radial-gradient(circle at 40% 40%,var(--gold-tint),transparent 68%)}
+.bg .f2{width:50vw;height:50vw;top:36%;left:-18vw;
+  background:radial-gradient(circle at 55% 45%,var(--grass-tint),transparent 68%)}
+.bg .f3{width:44vw;height:44vw;bottom:-12vw;right:-8vw;
+  background:radial-gradient(circle at 50% 50%,var(--wood-tint),transparent 66%)}
+main{position:relative;z-index:1}
+
+/* лепестки */
+.petals{position:fixed;inset:0;z-index:12;pointer-events:none}
+.petal{position:absolute;color:var(--gold-soft);opacity:0;
+  animation:pd var(--t,30s) ease-in-out infinite alternate,pf 12s ease-in-out infinite;
+  animation-delay:var(--dl,0s)}
+.petal svg{display:block;width:100%}
+@keyframes pd{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(38px,-52px) rotate(9deg)}
+  100%{transform:translate(-26px,-104px) rotate(-7deg)}}
+@keyframes pf{0%,100%{visibility:hidden}12%,88%{visibility:visible}}
+.pt1{left:12%;top:56%;width:56px;--t:34s;--dl:-6s;filter:blur(1.4px);opacity:.2}
+.pt2{right:10%;top:30%;width:44px;--t:27s;--dl:-14s;filter:blur(.4px);opacity:.26}
+.pt3{left:46%;top:78%;width:50px;--t:31s;--dl:-22s;filter:blur(1.4px);opacity:.2}
+
+/* шапка */
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;
+  gap:12px;padding:12px 18px;
+  background:rgba(253,251,244,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line)}
+.topbar .brand{display:inline-flex;align-items:center;gap:9px;
+  font-family:'Prata',serif;font-size:15px;letter-spacing:.08em;color:var(--wood-dark)}
+.topbar .brand svg{width:30px;color:var(--grass-deep)}
+
+/* ═══ ПЛАВАЮЩАЯ КНОПКА «ВЕРНУТЬСЯ НА ГЛАВНУЮ» ═══ */
+.back-float{position:fixed;right:20px;bottom:20px;z-index:60;
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:56px;padding:14px 24px;border-radius:999px;
+  font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:#FFFDF6;
+  background:linear-gradient(135deg,#A8875C,#7A6240);
+  border:1px solid rgba(224,207,169,.5);
+  box-shadow:0 14px 32px rgba(24,38,58,.4),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .35s var(--ez),box-shadow .35s}
+.back-float:hover{transform:translateY(-4px);
+  box-shadow:0 20px 44px rgba(24,38,58,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+.back-float:active{transform:translateY(-1px)}
+.back-float svg{width:17px;height:17px;flex:none}
+
+/* герой */
+.hero-s{position:relative;max-width:1040px;margin:0 auto;
+  padding:clamp(48px,8vw,84px) 24px clamp(28px,4vw,44px);text-align:center}
+.hero-s .lotus{width:64px;color:var(--grass-deep);margin-bottom:16px;
+  filter:drop-shadow(0 14px 24px rgba(96,111,60,.25))}
+.kick{display:inline-flex;align-items:center;gap:12px;
+  font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold-ink)}
+.kick::before,.kick::after{content:"";width:26px;height:1px;background:var(--gold-soft)}
+.hero-s h1{font-family:'Prata',serif;font-weight:400;font-size:clamp(30px,5vw,48px);
+  line-height:1.2;margin:16px 0 12px}
+.hero-s .sub{font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(18px,2.6vw,23px);color:var(--ink-soft)}
+.rule{display:block;width:64px;height:2px;margin:22px auto 0;
+  background:var(--gold-soft);border-radius:2px}
+
+/* текст истории — широко на ПК */
+.story{max-width:1000px;margin:0 auto;padding:0 24px clamp(48px,6vw,80px)}
+.ch{margin:clamp(36px,5vw,60px) 0 0}
+.ch-tag{display:inline-flex;align-items:center;gap:10px;
+  font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--grass-deep)}
+.ch-tag::before{content:"";width:22px;height:1px;background:var(--gold-soft)}
+.ch h2{font-family:'Prata',serif;font-weight:400;font-size:clamp(22px,3.2vw,28px);
+  line-height:1.3;margin:12px 0 18px;color:var(--ink)}
+.ch p{font-size:16.5px;line-height:1.9;margin:0 0 16px}
+.ch p b{color:var(--grass-deep);font-weight:600}
+.pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:clamp(20px,2.6vw,24px);line-height:1.55;color:var(--gold-ink);
+  border-left:3px solid var(--gold-soft);padding:8px 0 8px 22px;margin:26px 0;
+  background:linear-gradient(90deg,var(--gold-tint),transparent 85%);
+  border-radius:0 14px 14px 0}
+.big{font-family:'Prata',serif;font-size:clamp(20px,2.8vw,25px);color:var(--grass-deep)}
+
+/* финал */
+.final{text-align:center;margin:clamp(44px,6vw,68px) 0 0;padding:clamp(32px,4vw,48px) 26px;
+  background:var(--cream);border:1px dashed rgba(168,135,92,.5);border-radius:24px;
+  box-shadow:var(--sh)}
+.sign{font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(22px,3vw,28px);color:var(--ink);margin:6px 0 4px}
+.sign small{display:block;font-family:'Jost',sans-serif;font-style:normal;
+  font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold-ink);margin-top:8px}
+.final .pull{text-align:left}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:9px;min-height:54px;padding:16px 34px;
+  border-radius:999px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;
+  transition:transform .35s var(--ez),box-shadow .35s,border-color .3s,background .3s}
+.btn:hover{transform:translateY(-3px)}
+.btn-gold{background:linear-gradient(135deg,#D2AC6A,#AD8A50);color:#fff;
+  box-shadow:0 16px 36px rgba(194,164,104,.45)}
+.btn-ghost{border:1px solid rgba(168,135,92,.6);color:var(--wood-text)}
+.btn-ghost:hover{border-color:var(--gold);background:var(--gold-tint)}
+
+footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;
+  font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--wood-text);background:var(--cream)}
+footer b{font-family:'Prata',serif;font-weight:600;letter-spacing:.12em;color:var(--wood-dark)}
+
+/* плавающая кнопка WhatsApp */
+.wa-float{position:fixed;left:18px;bottom:20px;z-index:58;
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;
+  box-shadow:0 12px 28px rgba(18,140,126,.45),inset 0 1px 0 rgba(255,255,255,.4);
+  transition:transform .4s var(--ez),box-shadow .4s}
+.wa-float:hover{transform:translateY(-4px) scale(1.06)}
+.wa-float svg{width:31px;height:31px;display:block}
+
+/* ═══ ТЕЛЕФОН ═══ */
+@media(max-width:767px){
+  body{line-height:1.8}
+  .story{max-width:640px;padding:0 20px clamp(40px,6vw,60px)}
+  .ch p{font-size:15px}
+  .ch h2{font-size:21px}
+  .pull{padding-left:14px;margin:18px 0}
+  .hero-s{padding:44px 20px 28px}
+  /* кнопка «назад» — компактнее, но заметная */
+  .back-float{right:12px;bottom:12px;min-height:52px;padding:12px 18px;font-size:11px}
+  .back-float svg{width:15px;height:15px}
+  .wa-float{left:12px;bottom:12px;width:52px;height:52px}
+  .wa-float svg{width:27px;height:27px}
+}
+@media(max-width:380px){
+  .back-float{padding:11px 14px;font-size:10.5px}
+}
+/* очень широкие мониторы — текст крупнее */
+@media(min-width:1280px){
+  .story{max-width:1060px}
+  .ch p{font-size:17.5px;line-height:1.92}
+  .ch h2{font-size:29px}
+  .pull{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .petals{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i></div>
+
+<div class="petals" aria-hidden="true">
+  <span class="petal pt1"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M60 3 C51 18 49 40 60 60 C71 40 69 18 60 3 Z"/><path d="M60 60 C47 53 39 37 41 16 C53 26 59 43 60 60 Z"/><path d="M60 60 C73 53 81 37 79 16 C67 26 61 43 60 60 Z"/><path d="M60 61 C45 69 25 66 13 51 C30 51 48 55 60 61 Z"/><path d="M60 61 C75 69 95 66 107 51 C90 51 72 55 60 61 Z"/></svg></span>
+  <span class="petal pt2"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M60 3 C51 18 49 40 60 60 C71 40 69 18 60 3 Z"/><path d="M60 60 C47 53 39 37 41 16 C53 26 59 43 60 60 Z"/><path d="M60 60 C73 53 81 37 79 16 C67 26 61 43 60 60 Z"/><path d="M60 61 C45 69 25 66 13 51 C30 51 48 55 60 61 Z"/><path d="M60 61 C75 69 95 66 107 51 C90 51 72 55 60 61 Z"/></svg></span>
+  <span class="petal pt3"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M60 3 C51 18 49 40 60 60 C71 40 69 18 60 3 Z"/><path d="M60 60 C47 53 39 37 41 16 C53 26 59 43 60 60 Z"/><path d="M60 60 C73 53 81 37 79 16 C67 26 61 43 60 60 Z"/><path d="M60 61 C45 69 25 66 13 51 C30 51 48 55 60 61 Z"/><path d="M60 61 C75 69 95 66 107 51 C90 51 72 55 60 61 Z"/></svg></span>
+</div>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M60 3 C51 18 49 40 60 60 C71 40 69 18 60 3 Z"/><path d="M60 60 C47 53 39 37 41 16 C53 26 59 43 60 60 Z"/><path d="M60 60 C73 53 81 37 79 16 C67 26 61 43 60 60 Z"/><path d="M60 61 C45 69 25 66 13 51 C30 51 48 55 60 61 Z"/><path d="M60 61 C75 69 95 66 107 51 C90 51 72 55 60 61 Z"/></svg>
+    Yoga Time Ashdod
+  </a>
+</header>
+
+<!-- плавающая кнопка «Вернуться на главную» — всегда на экране -->
+<a class="back-float" href="index.html" aria-label="Вернуться на главную">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Вернуться на главную
+</a>
+
+<main>
+
+  <div class="hero-s">
+    <svg class="lotus" viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 3 C51 18 49 40 60 60 C71 40 69 18 60 3 Z"/><path d="M60 60 C47 53 39 37 41 16 C53 26 59 43 60 60 Z"/><path d="M60 60 C73 53 81 37 79 16 C67 26 61 43 60 60 Z"/><path d="M60 61 C45 69 25 66 13 51 C30 51 48 55 60 61 Z"/><path d="M60 61 C75 69 95 66 107 51 C90 51 72 55 60 61 Z"/><path d="M60 62 C43 74 21 73 9 61"/><path d="M60 62 C77 74 99 73 111 61"/></svg>
+    <p class="kick">Моя история</p>
+    <h1>Йога, авария, три ребёнка<br>и немного безумия</h1>
+    <p class="sub">Или как я стала преподавателем йоги</p>
+    <span class="rule"></span>
+  </div>
+
+  <article class="story">
+
+    <section class="ch">
+      <p class="ch-tag">Глава первая</p>
+      <h2>Любовь с первого… нет, со второго раза!</h2>
+      <p>Привет, друзья! Давайте знакомиться! Меня зовут <b>Татьяна</b>. Мне 40 лет, у меня трое детей и богатый жизненный опыт. На этом можно было бы и закончить знакомство. Но вы ведь здесь не за этим! Поэтому расскажу, кто я в йоге и почему однажды решила посвятить ей часть своей жизни.</p>
+      <p>Спорт в моей жизни был всегда — правда, исключительно на любительском уровне. Степ-аэробика, гимнастика, плавание, фитнес, тренажёрный зал, петли TRX… Я всегда любила движение и не представляла себя без физической активности.</p>
+      <p>А вот с йогой у нас отношения складывались не сразу. Впервые я познакомилась с ней в 2011 году. Будучи беременной первенцем, решила подготовиться к родам и записалась на аквааэробику и йогу для беременных. С давлением у меня и без того было не всё гладко: в лучшие дни оно составляло 90/60, а с животиком и вовсе стало моим обычным показателем.</p>
+      <p>Но йога, на которую мне удалось попасть, состояла преимущественно из медленных, тягучих и продолжительных статических асан. Долгое пребывание в них расслабляло настолько, что моё и без того невысокое давление, кажется, решило окончательно уйти в отпуск.</p>
+      <div class="pull">В какой-то момент мой зелёный цвет лица настолько напугал преподавателей, что мне срочно принесли кофе.</div>
+      <p>На этом наше первое знакомство с йогой закончилось. И ещё на пару лет она пропала из моего поля зрения.</p>
+      <p><b>А потом случилась любовь. Со второго раза.</b> ♥</p>
+      <p>Примерно за год до репатриации я попала на день открытых дверей в одну из студий йоги в Харькове. Дело было в декабре. За окном — минус 15. В описании мероприятия было написано: приходить в лёгкой одежде — майки, лосины, шорты.</p>
+      <p>Ну, раз сказали, значит — надо! Кто жил в Украине, тот прекрасно понимает: хорошее отопление было преимущественно в новых домах. Студия йоги к ним явно не относилась.</p>
+      <p>Я пришла в одежде, как было велено. Дрожала, как осиновый лист. Мне вручили тёплый плед, и, закутавшись в него как в кокон, я отправилась вместе с остальными мёрзнуть на коврик. Нас было около 50 человек, примерно пять инструкторов-помощников и ОНА — йогиня Ирина Сикорская. С неё всё началось.</p>
+      <p>Я смотрела на неё влюблёнными глазами: ни разу не переминаясь с ноги на ногу, она сидела с идеально прямой спиной, мягко и расслабленно, по-турецки. Улыбалась. И выглядела так, будто это её совершенно естественная поза. Не час, не два, а все 24 часа в сутки!</p>
+      <p>В какой-то момент Ирина спросила, не открыть ли нам окна. Судя по стуку наших зубов и дрожащим телам, вопрос был, мягко говоря, неожиданным. Она усмехнулась: «Не волнуйтесь. Давайте немного подышим, и вы сами попросите приоткрыть окошки». И мы подышали. И знаете что? Она не обманула! Через 10–15 минут в зале действительно стало жарко и душно. Мы сами попросили открыть окна.</p>
+      <p>К слову, на тот момент я считала, что нахожусь в очень хорошей физической форме. Спортом-то я занималась всю жизнь! Но когда мы начали выполнять асаны, я поняла: в йоге тело работает совершенно иначе. Чего только стоили её слова: «Вы делайте, а я прокомментирую!»</p>
+      <p>И вот мы замираем в самых причудливых формах, а инструкторы-помощники легко перемещаются по залу, не пропуская ни одного человека, и корректируют каждого. А потом пришла она. <b>Крепатура!</b> Та самая боль в мышцах, которая появляется спустя часы или дни после непривычной нагрузки.</p>
+      <div class="pull">Две недели, Карл! ДВЕ НЕДЕЛИ!</div>
+      <p>Первый и единственный раз в жизни я испытывала крепатуру столько времени. Именно в тот вечер я поняла, что рано или поздно мы с йогой обязательно будем на «ты».</p>
+    </section>
+
+    <section class="ch">
+      <p class="ch-tag">Глава вторая</p>
+      <h2>Когда жизнь резко меняет направление</h2>
+      <p>Через год мы репатриировались в Израиль. Спустя всего два месяца я попала в тяжёлую автомобильную аварию. Чудом выжила. К сожалению, не всем участникам ДТП так повезло…</p>
+      <p>Последствия были серьёзными: сотрясение головного мозга, разбитая голова, перелом ребра, перелом руки в двух местах в районе запястья, многочисленные гематомы по всему телу и бесчисленное количество осколков в теле и голове. Но самым страшным для меня оказалось повреждение стопы. Плюсневые кости и голеностоп были раздроблены. Кости буквально разлетелись, как стекло.</p>
+      <p>Четыре дня врачи решали, что со мной делать, собирали консилиумы и обсуждали варианты. В итоге от операции отказались: соединять мельчайшие осколки сочли нецелесообразным. Ногу загипсовали на четыре месяца.</p>
+      <p>А потом началось то, что, пожалуй, можно назвать отдельной жизнью: долгая реабилитация, гидротерапия, физиотерапия, психологи и всё остальное, что помогало мне постепенно возвращаться к нормальной жизни. Полтора года я занималась восстановлением.</p>
+      <p>В это время параллельно начала ходить в походы и самостоятельно практиковать йогу. Да-да, именно так.</p>
+      <div class="pull">Вместо того чтобы поставить на себе крест, я искала способы двигаться дальше.</div>
+      <p>В какой-то момент все мои физиотерапевты отказались от дальнейших занятий со мной. Сказали, что я сама делаю больше, чем они могут мне дать. Для меня это было очень важным моментом. Я начала понимать, насколько много зависит от собственного желания, терпения и ежедневной работы.</p>
+      <p>А потом наступил прекрасный период под названием «Коронавирус». Когда перед тобой два варианта: смотреть фильмы и лопать мороженое или заниматься своим телом и сознанием, я выбрала второй вариант. 😉 Конечно, я выбрала йогу.</p>
+    </section>
+
+    <section class="ch">
+      <p class="ch-tag">Глава третья</p>
+      <h2>От ученицы до преподавателя</h2>
+      <p>Несколько лет я занималась по YouTube с одним преподавателем. Практиковала, изучала своё тело, училась понимать его возможности и ограничения. А потом мой друг Богдан Карплюк подсказал мне, к кому стоит пойти учиться. Богдан, спасибо тебе огромное за тот самый толчок! ♥</p>
+      <p>Так я попала к Жене (Natan Dub). Времени у меня, как обычно, не было. Но это меня не остановило. Полтора года я ездила к нему из Хариша в Тель-Авив два раза в неделю, чтобы заниматься и учиться. Полтора года дорог, поездок, практик и знаний.</p>
+      <p>Женя, благодарю тебя за каждую минуту! Поверь, каждая из них была для меня ценной и важной. Я ездила на выездные семинары под Беэр-Шевой, на Синай. Каждая поездка, каждая практика, каждая встреча становились ещё одной ступенькой на моём пути.</p>
+      <p>Но в какой-то момент произошло то, чего я совершенно не ожидала. Однажды после очередной практики ко мне подошла Ксюша — такая же ученица, как я, — и спросила: «А почему ты не становишься рядом с учителем на коврик?» Я опешила. «А почему я должна становиться рядом с ним перед вами всеми?» И тут она ответила:</p>
+      <div class="pull">«Ну ты же инструктор! Я всегда смотрю на тебя на практике и ориентируюсь на тебя».</div>
+      <p>Представляете? До этого момента я даже не рассматривала себя в роли преподавателя. Мне казалось, что мне ещё расти и расти. Что я ещё недостаточно знаю, недостаточно умею и, возможно, с моей ногой никогда не смогу преподавать другим. А тут человек говорит, что уже ориентируется на меня!</p>
+      <p>По счастливой случайности рядом оказался Женя и услышал наш разговор. Он поддержал Ксюшу и сказал, что мне уже давно пора. И вот тут внутри меня что-то перевернулось. Оказывается, иногда окружающие видят в нас то, что мы сами пока не решаемся увидеть. Ребята, спасибо вам! Именно вы подарили мне веру в себя. ♥</p>
+    </section>
+
+    <section class="ch">
+      <p class="ch-tag">Глава четвёртая</p>
+      <h2>Учиться, учиться и ещё раз учиться</h2>
+      <p>С уверенностью могу сказать, что мне посчастливилось учиться у лучших из лучших. Я познакомилась лично с Романом Юрьевым и Натальей Мозер — Yoga Banda. Успела позаниматься у них и даже дважды пройти курс инструкторов.</p>
+      <p>Роман и Наталья, благодарю вас за огромный вклад в каждого ученика! За знания, терпение, энергию, мотивацию, юмор и опыт. За то, что делитесь всем этим с нами. Для меня это бесценно.</p>
+      <p>Я никогда не воспринимала йогу как конечную точку, к которой нужно прийти. Для меня это постоянное движение, исследование, обучение и развитие. И, конечно, знакомство с собой.</p>
+      <p>Каждая новая практика, каждый учитель, каждый ученик и каждый новый опыт открывают что-то новое. Именно поэтому я продолжаю учиться. И уверена, что этот процесс никогда не закончится.</p>
+    </section>
+
+    <section class="ch">
+      <p class="ch-tag">Глава пятая</p>
+      <h2>Мои факапы, или почему я не сяду в лотос</h2>
+      <p>А теперь немного о том, чего я, скорее всего, никогда не смогу сделать.</p>
+      <p>Я никогда не сяду в лотос. Не потому, что недостаточно стараюсь, а из-за анатомического строения моих тазобедренных суставов. Скорее всего, никогда не сяду и на поперечный шпагат — по той же причине. А ещё, вероятно, никогда не смогу идеально держать баланс на правой ноге. Всё-таки многочисленные переломы оставили свой след.</p>
+      <p class="big">И знаете что? МЕНЯ ЭТО УСТРАИВАЕТ!</p>
+      <p>Потому что йога — это не конкурс на самую красивую асану. Не соревнование, кто выше поднимет ногу, глубже прогнётся или дольше простоит на голове.</p>
+      <div class="pull">Йога — это про умение слышать своё тело, принимать его особенности, работать с ним бережно и с уважением.</div>
+      <p>Я прекрасно знаю, что такое ограничения. Знаю, каково это — когда тело не слушается, когда что-то болит, мешает, хрустит, не тянется и отказывается выполнять то, что ты от него хочешь. Знаю, что такое больная спина и проблемные колени. И понимаю, что у каждого из нас своё тело, своя история и свои возможности.</p>
+      <p>Поэтому на моих занятиях не будет задачи во что бы то ни стало повторить за преподавателем красивую картинку. Будет практика, в которой мы будем учиться понимать своё тело, исследовать его возможности, укреплять его и развивать подвижность, не забывая о собственных ограничениях.</p>
+      <p>Я знаю, как важно не торопиться, не сравнивать себя с другими и не пытаться любой ценой соответствовать чьим-то ожиданиям. Потому что я сама прошла этот путь.</p>
+    </section>
+
+    <section class="ch">
+      <p class="ch-tag">Глава шестая</p>
+      <h2>А теперь — немного обо мне как о преподавателе</h2>
+      <p>В йоге я с 2011 года. За это время я прошла путь от беременной девушки, которая чуть не потеряла сознание на йоге, до преподавателя, который сегодня приглашает людей на коврик. За моими занятиями стоят годы личной практики, восстановления после тяжёлой травмы, обучения, поездок к учителям, собственных ошибок и открытий. Но самое главное — за ними стоит любовь к тому, что я делаю.</p>
+      <p>Я не обещаю, что после первого занятия вы сядете на шпагат, избавитесь от всех болей или начнёте ходить по потолку. Зато я обещаю, что буду внимательна к вам и вашему телу. Что мы будем двигаться в вашем темпе, исследовать возможности, учиться чувствовать себя и получать удовольствие от процесса.</p>
+      <p>А ещё у меня достаточно опыта, мотивации и знаний, чтобы помочь вам начать свой путь. И с харизмой, кстати, всё в порядке! 😎</p>
+      <p>Я умею быть настойчивой, когда это необходимо, но не люблю насилие над собой и своим телом. Люблю движение, путешествия, новые знакомства и людей, которые готовы пробовать что-то новое. И очень люблю, когда человек после практики уходит с улыбкой и ощущением, что сегодня сделал для себя что-то хорошее.</p>
+      <p>Так что, друзья: если вы давно хотели попробовать йогу, но боялись, что вы недостаточно гибкие, недостаточно спортивные или просто не знаете, с какой стороны подойти к коврику, — <b>приходите!</b> Если у вас болит спина, хрустят колени, не тянутся мышцы или вы просто желаете лучше чувствовать своё тело — <b>тоже приходите</b>. Если вы уже практикуете, но ищете преподавателя, с которым можно развиваться и получать удовольствие от занятий, — <b>приходите!</b> И даже если вы пока не знаете, зачем вам йога, но чувствуете, что пора что-то менять в жизни, — <b>приходите!</b></p>
+      <p>Мы обязательно поладим. До встречи на коврике! ✌🌳♥</p>
+    </section>
+
+    <div class="final">
+      <div class="sign">Татьяна<small>Yoga Time Ashdod</small></div>
+      <p class="pull">Йога — это путь. И я буду рада пройти часть этого пути вместе с вами.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="index.html#booking">Записаться на занятие</a>
+        <a class="btn btn-ghost" href="index.html">На главную</a>
+      </div>
+    </div>
+
+  </article>
+
+</main>
+
+<footer>
+  <b>Yoga Time</b> · Ashdod · йога у моря
+</footer>
+
+<a class="wa-float" href="https://wa.me/972538611011?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%D0%B0%20%D0%B2%D0%B0%D1%88%D1%83%20%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8E%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D0%B9%D0%BE%D0%B3%D1%83%20%F0%9F%A7%98%E2%80%8D%E2%99%80%EF%B8%8F" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
